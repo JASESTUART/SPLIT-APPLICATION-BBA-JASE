@@ -45,7 +45,11 @@
       place-items: center;
     }
     @media (max-width: 720px) {
-      .hero-coming-soon { padding-top: 72px; }
+      /* compress hero so navbar + titles + video fit on the first screen */
+      .hero-coming-soon { padding-top: 68px; padding-bottom: 24px; }
+      .hero-coming-soon h1 { margin-bottom: 14px !important; }
+      .hero-sub { margin-bottom: 22px !important; }
+      .hero-sub span + span { margin-top: 14px !important; }
     }
 
     @keyframes beam-spin {
@@ -137,7 +141,7 @@
             Stay Strong</span></span>
       </h1>
 
-      <p class="text-lg md:text-xl text-white/70 leading-relaxed"
+      <p class="hero-sub text-lg md:text-xl text-white/70 leading-relaxed"
         style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin-bottom:48px">
         <span style="display:block">We built it that way. 4,000+ transformations and counting.</span>
         <span style="display:block;margin-top:24px">Let me show you how.</span>

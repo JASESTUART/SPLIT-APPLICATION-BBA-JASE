@@ -1127,55 +1127,112 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============ FOOTER brand + socials ============ */
 .footer-badge { height: 72px; width: auto; filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.35)); }
-.footer-socials { display: flex; gap: 14px; }
-.footer-socials a {
-  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-  border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(59, 130, 246, 0.14);
-  color: #ffffff; transition: background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
-}
-.footer-socials a svg { width: 22px; height: 22px; display: block; }
-.footer-socials a:hover { background: #38B6FF; border-color: #38B6FF; color: #ffffff; transform: translateY(-2px); }
-@media (max-width: 880px) { .footer-inner { align-items: center; text-align: center; } }
 
-/* ============ FOOTER grid (brand / links / cta) ============ */
+/* social icons: blue glowing circles */
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a {
+  width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: #2563eb; border: 1px solid rgba(96, 165, 250, 0.5);
+  color: #ffffff; box-shadow: 0 0 22px -4px rgba(37, 99, 235, 0.7);
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.footer-socials a svg { width: 20px; height: 20px; display: block; }
+.footer-socials a:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 0 28px -2px rgba(37, 99, 235, 0.9); }
+
+/* ============ FOOTER grid (newsletter / nav) ============ */
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.5fr) auto;
+  gap: 64px;
   align-items: start;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
 }
-.footer-brand-col { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
-.footer-links { display: grid; gap: 16px; }
-.footer-links a {
+
+/* left column */
+.footer-headline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 48px;
+  max-width: 14ch;
+}
+.footer-headline span { color: #64748b; }
+.footer-news-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+.footer-form { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+.footer-form input {
+  flex: 1 1 200px;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  transition: border-color .2s ease, background .2s ease;
+}
+.footer-form input::placeholder { color: #94a3b8; }
+.footer-form input:focus { outline: none; border-color: #2563eb; background: rgba(37, 99, 235, 0.08); }
+.footer-subscribe {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px 26px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 26px -6px rgba(37, 99, 235, 0.8);
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.footer-subscribe svg { width: 18px; height: 18px; }
+.footer-subscribe:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 0 32px -4px rgba(37, 99, 235, 1); }
+.footer-disclaimer {
+  margin: 20px 0 0;
+  max-width: 56ch;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #64748b;
+}
+.footer-disclaimer a { color: #cbd5e1; font-weight: 600; }
+.footer-disclaimer a:hover { color: #38B6FF; }
+
+/* right column */
+.footer-side { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
+.footer-nav { display: grid; gap: 14px; }
+.footer-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: #cbd5e1;
   transition: color 0.2s ease;
 }
-.footer-links a:hover { color: #38B6FF; }
-.footer-cta-col { display: flex; justify-content: flex-end; align-items: flex-start; }
-.footer-signin {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #2563eb;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 18px 48px;
-  border-radius: 14px;
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-.footer-signin:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4); }
+.footer-nav a svg { width: 14px; height: 14px; color: #64748b; transition: color 0.2s ease, transform 0.2s ease; }
+.footer-nav a:hover { color: #38B6FF; }
+.footer-nav a:hover svg { color: #38B6FF; transform: translate(2px, -2px); }
 .page-footer .copyright { text-align: center; margin-top: 8px; }
+
 @media (max-width: 880px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; justify-items: center; text-align: center; }
-  .footer-brand-col { align-items: center; }
-  .footer-links { justify-items: center; }
-  .footer-cta-col { justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr; gap: 48px; }
+  .footer-headline { margin-bottom: 36px; }
+  .footer-side { align-items: flex-start; }
 }
 
 /* ============ THE FIX — solar-system radial navigation ============ */

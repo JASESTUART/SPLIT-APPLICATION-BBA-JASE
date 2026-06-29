@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="men.css?v=9" />
+  <link rel="stylesheet" href="men.css?v=10" />
   <style>
     @keyframes orb-float {
 
@@ -388,226 +388,82 @@
     </div>
   </section>
 
-  <!-- 7. TESTIMONIALS (QUOTES) — reviews under the transformations -->
-  <section class="border-y bg-black border-white/5 pt-24 pb-24">
-    <style>
-      .font-jakarta {
-        font-family: 'Poppins', sans-serif;
-      }
-
-      .font-geist {
-        font-family: 'Poppins', sans-serif;
-      }
-
-      .testimonial-cards-fan {
-        perspective: 2000px;
-      }
-
-      .fan-card {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-        will-change: transform, opacity, box-shadow;
-        transform-origin: center center;
-      }
-
-      .fan-1 {
-        z-index: 60;
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        filter: brightness(1.1);
-      }
-
-      .fan-2 {
-        z-index: 50;
-        transform: translate(-50%, -50%) translate(-160px, 10px) rotate(-8deg) scale(0.95);
-        opacity: 0.9;
-      }
-
-      .fan-3 {
-        z-index: 50;
-        transform: translate(-50%, -50%) translate(160px, 10px) rotate(8deg) scale(0.95);
-        opacity: 0.9;
-      }
-
-      .fan-4 {
-        z-index: 40;
-        transform: translate(-50%, -50%) translate(-300px, 40px) rotate(-16deg) scale(0.9);
-        opacity: 0.8;
-      }
-
-      .fan-5 {
-        z-index: 40;
-        transform: translate(-50%, -50%) translate(300px, 40px) rotate(16deg) scale(0.9);
-        opacity: 0.8;
-      }
-
-      .fan-6 {
-        z-index: 30;
-        transform: translate(-50%, -50%) translateY(-20px) scale(0.88);
-        opacity: 0.6;
-        filter: brightness(0.7);
-      }
-
-      .group:hover .fan-card {
-        z-index: 50;
-        opacity: 1;
-        filter: brightness(1);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
-
-      .group:hover .fan-2 {
-        transform: translate(-50%, -50%) translate(-105%, -55%) rotate(0deg) scale(1);
-      }
-
-      .group:hover .fan-1 {
-        transform: translate(-50%, -50%) translate(0%, -55%) rotate(0deg) scale(1);
-      }
-
-      .group:hover .fan-3 {
-        transform: translate(-50%, -50%) translate(105%, -55%) rotate(0deg) scale(1);
-      }
-
-      .group:hover .fan-4 {
-        transform: translate(-50%, -50%) translate(-105%, 55%) rotate(0deg) scale(1);
-      }
-
-      .group:hover .fan-6 {
-        transform: translate(-50%, -50%) translate(0%, 55%) rotate(0deg) scale(1);
-      }
-
-      .group:hover .fan-5 {
-        transform: translate(-50%, -50%) translate(105%, 55%) rotate(0deg) scale(1);
-      }
-
-      @media (max-width: 1024px) {
-        .testimonial-cards-fan {
-          height: auto !important;
-          display: flex;
-          flex-direction: column;
-          padding: 2rem 1rem;
-          gap: 1.5rem;
-        }
-
-        .fan-card {
-          position: relative !important;
-          left: auto !important;
-          top: auto !important;
-          transform: none !important;
-          width: 100% !important;
-          max-width: 28rem !important;
-          opacity: 1 !important;
-          filter: none !important;
-        }
-
-        .group:hover .fan-card {
-          transform: none !important;
-        }
-      }
-    </style>
-
-    <div class="group sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
-      <div class="testimonial-cards-fan flex w-full h-[42rem] max-w-7xl mt-0 mb-0 relative items-center justify-center">
-
-        <article
-          class="fan-card fan-1 w-full max-w-sm rounded-2xl bg-gray-950 border border-white/5 px-6 py-5 text-left relative overflow-hidden">
-          <div class="relative z-10">
-            <div class="mb-3 text-3xl leading-none text-white font-jakarta font-medium">"</div>
-            <p class="mb-4 text-base font-geist text-gray-300">Down 18kg in 6 months. I finally have the energy to keep
-              up with my kids — and my wife noticed before I did.</p>
-            <div class="mt-4 flex items-center gap-3">
-              <div class="w-9 h-9 bg-gray-700 rounded-full"></div>
-              <div>
-                <div class="text-sm font-medium text-white font-geist">Client A</div>
-                <div class="text-xs font-geist text-gray-500">BBA Member</div>
-              </div>
-            </div>
-          </div>
+  <!-- 7. CLIENT REVIEWS (auto carousel under the transformations) -->
+  <section class="reviews-carousel">
+    <div class="container">
+      <div class="rc-viewport" id="rcViewport">
+        <div class="rc-track" id="rcTrack">
+        <article class="rc-card">
+          <div class="rc-mark">“</div>
+          <p class="rc-quote">Down 18kg in 6 months. I finally have the energy to keep up with my kids — and my wife noticed before I did.</p>
+          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client A</div><div class="rc-role">BBA Member</div></div></div>
         </article>
-
-        <article
-          class="fan-card fan-2 w-full max-w-sm rounded-2xl bg-gray-950 border border-white/5 px-6 py-5 text-left relative overflow-hidden">
-          <div class="relative z-10">
-            <div class="mb-3 text-3xl leading-none text-white font-jakarta font-medium">"</div>
-            <p class="mb-4 text-base font-geist text-gray-300">I tried every diet you can name. This was the first
-              program that didn't ask me to quit my life to follow it.</p>
-            <div class="mt-4 flex items-center gap-3">
-              <div class="w-9 h-9 bg-gray-700 rounded-full"></div>
-              <div>
-                <div class="text-sm font-medium text-white font-geist">Client B</div>
-                <div class="text-xs font-geist text-gray-500">BBA Member</div>
-              </div>
-            </div>
-          </div>
+        <article class="rc-card">
+          <div class="rc-mark">“</div>
+          <p class="rc-quote">I tried every diet you can name. This was the first program that didn't ask me to quit my life to follow it.</p>
+          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client B</div><div class="rc-role">BBA Member</div></div></div>
         </article>
-
-        <article
-          class="fan-card fan-3 w-full max-w-sm rounded-2xl bg-gray-950 border border-white/5 px-6 py-5 text-left relative overflow-hidden">
-          <div class="relative z-10">
-            <div class="mb-3 text-3xl leading-none text-white font-jakarta font-medium">"</div>
-            <p class="mb-4 text-base font-geist text-gray-300">Lost the belly, kept the strength. At 42 I'm in the best
-              shape since my twenties.</p>
-            <div class="mt-4 flex items-center gap-3">
-              <div class="w-9 h-9 bg-gray-700 rounded-full"></div>
-              <div>
-                <div class="text-sm font-medium text-white font-geist">Client C</div>
-                <div class="text-xs font-geist text-gray-500">BBA Member</div>
-              </div>
-            </div>
-          </div>
+        <article class="rc-card">
+          <div class="rc-mark">“</div>
+          <p class="rc-quote">Lost the belly, kept the strength. At 42 I'm in the best shape since my twenties.</p>
+          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client C</div><div class="rc-role">BBA Member</div></div></div>
         </article>
-
-        <article
-          class="fan-card fan-4 w-full max-w-sm rounded-2xl bg-gray-950 border border-white/5 px-6 py-5 text-left relative overflow-hidden">
-          <div class="relative z-10">
-            <div class="mb-3 text-3xl leading-none text-white font-jakarta font-medium">"</div>
-            <p class="mb-4 text-base font-geist text-gray-300">The accountability is what makes it work. Knowing someone
-              is checking in flips a switch.</p>
-            <div class="mt-4 flex items-center gap-3">
-              <div class="w-9 h-9 bg-gray-700 rounded-full"></div>
-              <div>
-                <div class="text-sm font-medium text-white font-geist">Client D</div>
-                <div class="text-xs font-geist text-gray-500">BBA Member</div>
-              </div>
-            </div>
-          </div>
+        <article class="rc-card">
+          <div class="rc-mark">“</div>
+          <p class="rc-quote">The accountability is what makes it work. Knowing someone is checking in flips a switch.</p>
+          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client D</div><div class="rc-role">BBA Member</div></div></div>
         </article>
-
-        <article
-          class="fan-card fan-5 w-full max-w-sm rounded-2xl bg-gray-950 border border-white/5 px-6 py-5 text-left relative overflow-hidden">
-          <div class="relative z-10">
-            <div class="mb-3 text-3xl leading-none text-white font-jakarta font-medium">"</div>
-            <p class="mb-4 text-base font-geist text-gray-300">Three sessions a week. That's it. And I'm leaner now than
-              when I was doing two-a-days.</p>
-            <div class="mt-4 flex items-center gap-3">
-              <div class="w-9 h-9 bg-gray-700 rounded-full"></div>
-              <div>
-                <div class="text-sm font-medium text-white font-geist">Client E</div>
-                <div class="text-xs font-geist text-gray-500">BBA Member</div>
-              </div>
-            </div>
-          </div>
+        <article class="rc-card">
+          <div class="rc-mark">“</div>
+          <p class="rc-quote">Three sessions a week. That's it. And I'm leaner now than when I was doing two-a-days.</p>
+          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client E</div><div class="rc-role">BBA Member</div></div></div>
         </article>
-
-        <article
-          class="fan-card fan-6 w-full max-w-sm rounded-2xl bg-gray-950 border border-white/5 px-6 py-5 text-left relative overflow-hidden">
-          <div class="relative z-10">
-            <div class="mb-3 text-3xl leading-none text-white font-jakarta font-medium">"</div>
-            <p class="mb-4 text-base font-geist text-gray-300">Sleep, food, training — they sorted all of it. My energy
-              is unrecognisable.</p>
-            <div class="mt-4 flex items-center gap-3">
-              <div class="w-9 h-9 bg-gray-700 rounded-full"></div>
-              <div>
-                <div class="text-sm font-medium text-white font-geist">Client F</div>
-                <div class="text-xs font-geist text-gray-500">BBA Member</div>
-              </div>
-            </div>
-          </div>
+        <article class="rc-card">
+          <div class="rc-mark">“</div>
+          <p class="rc-quote">Sleep, food, training — they sorted all of it. My energy is unrecognisable.</p>
+          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client F</div><div class="rc-role">BBA Member</div></div></div>
         </article>
-
+        </div>
       </div>
+      <div class="rc-dots" id="rcDots"></div>
     </div>
+    <script>
+      (function () {
+        var track = document.getElementById("rcTrack");
+        var vp = document.getElementById("rcViewport");
+        var dotsWrap = document.getElementById("rcDots");
+        if (!track || !vp) return;
+        var cards = [].slice.call(track.children);
+        var i = 0, timer = null;
+        var DELAY = 3500;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        cards.forEach(function (c, idx) {
+          var d = document.createElement("button");
+          d.type = "button"; d.className = "rc-dot"; d.setAttribute("aria-label", "Review " + (idx + 1));
+          d.addEventListener("click", function () { go(idx); restart(); });
+          dotsWrap.appendChild(d);
+        });
+        var dots = [].slice.call(dotsWrap.children);
+        function center() {
+          var c = cards[i];
+          var x = vp.clientWidth / 2 - (c.offsetLeft + c.offsetWidth / 2);
+          track.style.transform = "translateX(" + x + "px)";
+          cards.forEach(function (card, idx) { card.classList.toggle("is-active", idx === i); });
+          dots.forEach(function (d, idx) { d.classList.toggle("is-active", idx === i); });
+        }
+        function go(n) { i = (n + cards.length) % cards.length; center(); }
+        function next() { go(i + 1); }
+        function start() { if (reduce) return; stop(); timer = setInterval(next, DELAY); }
+        function stop() { if (timer) { clearInterval(timer); timer = null; } }
+        function restart() { stop(); start(); }
+        vp.addEventListener("mouseenter", stop);
+        vp.addEventListener("mouseleave", start);
+        window.addEventListener("resize", center);
+        center(); start();
+        setTimeout(center, 300);
+        window.addEventListener("load", center);
+      })();
+    </script>
   </section>
 
   <!-- 6. APPLICATION -->

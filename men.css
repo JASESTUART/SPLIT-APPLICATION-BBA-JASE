@@ -571,13 +571,6 @@ button { font-family: inherit; cursor: pointer; }
   background: #05070d;
   display: block;
 }
-.transformation-name {
-  text-align: center;
-  padding: 16px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #ffffff;
-}
 
 /* ============ FOUNDER ============ */
 .founder-inner {

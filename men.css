@@ -60,7 +60,8 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 16px;
 }
 .section-headline {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
   font-size: clamp(36px, 6vw, 64px);
   line-height: 1.05;
   letter-spacing: 0.01em;
@@ -422,7 +423,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 14px;
 }
 .why-headline {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(28px, 4.5vw, 44px);
   font-weight: 800;
   line-height: 1.1;
@@ -871,6 +872,7 @@ button { font-family: inherit; cursor: pointer; }
   text-align: center;
 }
 .final-cta-headline {
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.15;

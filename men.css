@@ -633,8 +633,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .founder-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1200 / 1727;
   object-fit: cover;
+  object-position: center top;
   display: block;
 }
 .founder-copy .section-headline { margin-bottom: 24px; }

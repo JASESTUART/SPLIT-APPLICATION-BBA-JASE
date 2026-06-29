@@ -1088,8 +1088,10 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   width: max-content;
   animation: rm-scroll 45s linear infinite;
+  filter: blur(0.4px);
+  will-change: transform;
 }
-.reviews-marquee:hover .rm-track { animation-play-state: paused; }
+.reviews-marquee:hover .rm-track { animation-play-state: paused; filter: none; }
 .rm-group {
   display: flex;
   gap: 24px;

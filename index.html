@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Better Body Academy — Start Here</title>
+<meta name="description"
+  content="Men and women follow different programs here. Select yours to see the plan built for your body." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Roboto:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --black:#0a0a0a;
+    --coral:#00AEEF;
+    --white:#ffffff;
+
+    --glass-bg:rgba(255,255,255,.05);
+    --glass-border:rgba(255,255,255,.10);
+
+    --t-100:rgba(255,255,255,1);
+    --t-70:rgba(255,255,255,.70);
+    --t-50:rgba(255,255,255,.50);
+    --t-30:rgba(255,255,255,.30);
+
+    --display:'Inter',system-ui,sans-serif;
+    --body:'Roboto',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+
+  body{
+    background:var(--black);
+    color:var(--t-100);
+    font-family:var(--body);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ambient coral halo — kept faint to respect the 80/15/5 ratio */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(80% 55% at 50% 78%, rgba(0,174,239,.14), transparent 60%),
+      radial-gradient(60% 40% at 50% 0%, rgba(0,174,239,.05), transparent 55%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* faded box grid — dissolves toward the edges */
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:60px 60px;
+    -webkit-mask-image:radial-gradient(ellipse at center, #000 38%, transparent 82%);
+    mask-image:radial-gradient(ellipse at center, #000 38%, transparent 82%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .page{
+    position:relative;
+    z-index:1;
+    min-height:calc(100dvh - 54px);
+    display:flex;
+    flex-direction:column;
+    padding:clamp(14px,3vw,26px) clamp(18px,4vw,40px) clamp(12px,2.4vw,22px);
+  }
+
+  /* ---------- top header bar (slim line: label + small badge) ---------- */
+  .topbar{
+    position:relative;
+    z-index:2;
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:54px;
+    padding:0 clamp(16px,4vw,40px);
+    border-bottom:1px solid var(--glass-border);
+    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+  }
+  .topbar-label{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(10px,1.3vw,12px);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--coral);
+  }
+  .topbar-badge{
+    position:absolute;
+    right:clamp(16px,4vw,40px);
+    top:50%;
+    transform:translateY(-50%);
+    height:36px;
+    width:auto;
+    display:block;
+  }
+  @media (max-width:430px){
+    .topbar-badge{height:30px}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    flex:1 1 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:clamp(13px,2vh,22px);
+    max-width:1080px;
+    width:100%;
+    margin:0 auto;
+    padding:clamp(12px,2vh,26px) 0;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-weight:500;
+    font-size:clamp(10px,1.3vw,12px);
+    letter-spacing:4px;
+    color:var(--coral);
+    text-transform:uppercase;
+  }
+
+  h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(34px,6.4vw,68px);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    color:var(--white);
+    max-width:14ch;
+  }
+
+  .sub{
+    font-family:var(--body);
+    font-weight:400;
+    font-size:clamp(15px,1.7vw,20px);
+    line-height:1.45;
+    color:var(--t-70);
+    max-width:48ch;
+  }
+  .sub .sub-cta{color:var(--white)}
+
+  .prompt{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(11px,1.3vw,13px);
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:var(--coral);
+    margin-top:clamp(2px,1vh,8px);
+  }
+
+  /* ---------- choice cards ---------- */
+  .cards{
+    display:flex;
+    align-items:flex-start;
+    gap:clamp(10px,1.6vw,20px);
+    width:100%;
+    max-width:660px;
+    margin-inline:auto;
+  }
+
+  .card{
+    flex:1 1 0;
+    display:flex;
+    flex-direction:column;
+    border-radius:18px;
+    border:1px solid var(--glass-border);
+    overflow:hidden;
+    text-decoration:none;
+    background:#0c0d10;
+    transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  }
+
+  /* photo region (full figure); the foot sits below it */
+  .card-img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    overflow:hidden;
+  }
+  .card-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+  /* caption row below the photo: label on the left, arrow on the right, divider line on top */
+  .card-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:clamp(12px,2.4vw,18px) clamp(14px,2.6vw,20px);
+    border-top:1px solid var(--glass-border);
+    background:#0a0b0e;
+  }
+  .card-label{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(20px,3.6vw,32px);
+    line-height:1;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+    color:var(--white);
+  }
+  .card-arrow{
+    display:grid;
+    place-items:center;
+    flex:0 0 auto;
+    width:clamp(30px,4.4vw,40px);
+    height:clamp(30px,4.4vw,40px);
+    border-radius:50%;
+    background:var(--coral);
+    color:#fff;
+    transition:transform .3s ease;
+  }
+
+  /* hover / focus — coral glow + lift */
+  .card:hover,.card:focus-visible{
+    transform:translateY(-6px);
+    border-color:var(--coral);
+    box-shadow:0 12px 40px rgba(0,0,0,.4), 0 0 40px rgba(0,174,239,.28);
+    outline:none;
+  }
+  .card:hover .card-arrow,.card:focus-visible .card-arrow{transform:translateX(4px)}
+
+  /* ---------- proof strip ---------- */
+  .proof{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:clamp(16px,4vw,44px);
+    margin-top:clamp(18px,4vh,40px);
+  }
+  .proof-item{text-align:center}
+  .proof-num{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(26px,4vw,40px);
+    line-height:1;
+    letter-spacing:-.01em;
+    color:var(--white);
+    margin-bottom:6px;
+    font-variant-numeric:tabular-nums;
+  }
+  .proof-label{
+    font-family:var(--mono);
+    font-weight:500;
+    font-size:clamp(9px,1.1vw,11px);
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--t-50);
+  }
+  .proof-div{
+    width:1px;
+    height:34px;
+    background:linear-gradient(180deg,transparent,rgba(255,255,255,.18),transparent);
+  }
+
+  /* ---------- mission footer ---------- */
+  .mission{
+    flex:0 0 auto;
+    text-align:center;
+    font-family:var(--display);
+    line-height:1.4;
+    margin-top:clamp(32px,6vh,60px);
+  }
+  .mission .m1{
+    display:inline;
+    font-weight:600;
+    font-size:clamp(13px,1.5vw,16px);
+    letter-spacing:.3px;
+    color:var(--t-70);
+  }
+  .mission .m2{
+    display:inline;
+    font-weight:400;
+    font-size:clamp(12px,1.4vw,15px);
+    letter-spacing:.3px;
+    color:var(--coral);
+  }
+  .copy{
+    display:block;
+    font-family:var(--body);
+    font-weight:400;
+    font-size:clamp(9px,2vw,12px);
+    letter-spacing:normal;
+    color:var(--white);
+  }
+  .mission .copy{margin-top:clamp(18px,3.2vh,30px)}
+  .copybar{display:none}
+
+  /* ---------- entrance motion ---------- */
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .topbar,.eyebrow,h1,.sub,.prompt,.cards,.proof,.mission{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .eyebrow{animation-delay:.05s}
+  h1{animation-delay:.12s}
+  .sub{animation-delay:.20s}
+  .prompt{animation-delay:.28s}
+  .cards{animation-delay:.34s}
+  .proof{animation-delay:.46s}
+  .mission{animation-delay:.54s}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  /* ---------- tablets & phones: keep the two cards side by side ---------- */
+  @media (max-width:680px){
+    .page{
+      min-height:calc(100dvh - 54px);
+      justify-content:flex-start;
+      padding:clamp(16px,5vw,24px) clamp(16px,5vw,24px) 0;
+    }
+    .hero{
+      justify-content:flex-start;
+      gap:clamp(12px,3vh,18px);
+    }
+    .cards{
+      gap:10px;
+    }
+    .card{
+      height:auto;
+    }
+    .card-foot{padding:11px 13px}
+    .card-label{font-size:clamp(17px,4.6vw,24px)}
+    .card-arrow{width:30px;height:30px}
+    /* tagline pinned to the bottom of the first screen (no divider here) */
+    .mission{
+      white-space:nowrap;
+      margin-top:auto;
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      padding:13px 16px 40px;
+    }
+    .mission .m1,.mission .m2{font-size:clamp(9px,2.8vw,13px);letter-spacing:.2px}
+    /* copyright lives below the fold, with the divider above it */
+    .copy--desk{display:none}
+    .copybar{
+      display:block;
+      text-align:center;
+      border-top:1px solid var(--glass-border);
+      padding:18px 16px 22px;
+    }
+  }
+
+  /* ---------- small phones: tighten type & proof strip ---------- */
+  @media (max-width:430px){
+    h1{font-size:clamp(28px,8.6vw,38px);max-width:18ch}
+    .sub{font-size:14px;max-width:38ch}
+    .prompt{letter-spacing:4px}
+    .card{border-radius:15px;height:auto}
+    .card-foot{padding:10px 12px}
+    .card-label{font-size:clamp(15px,5vw,21px)}
+    .card-arrow{width:26px;height:26px}
+    .card-cta{font-size:11px;gap:5px;margin-top:5px}
+    /* proof becomes a tidy 2x2 grid, no dividers */
+    .proof{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px 12px;
+      width:100%;
+      max-width:340px;
+    }
+    .proof-num{font-size:clamp(24px,8vw,32px)}
+    .proof-div{display:none}
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <span class="topbar-label">Better Body Academy</span>
+    <img class="topbar-badge" src="BADGE LOGO (Filled).png" alt="Better Body Academy">
+  </header>
+
+  <div class="page">
+
+    <main class="hero">
+
+      <h1>This is where it changes.</h1>
+
+      <p class="sub">See the program, the real results, and exactly how it works for you. <span class="sub-cta">Tap the one that's you.</span></p>
+
+      <div class="cards">
+
+        <!-- MAN -->
+        <a class="card card-men" href="men.html" aria-label="I am a man — see my transformation plan">
+          <div class="card-img"><img class="card-photo" src="man-before-after.webp"
+            alt="Real Better Body Academy client — 21kg lost, 25cm off the waist" loading="lazy"></div>
+          <div class="card-foot">
+            <span class="card-label">Man</span>
+            <span class="card-arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+        <!-- WOMAN -->
+        <a class="card card-women" href="women.html" aria-label="I am a woman — see my transformation plan">
+          <div class="card-img"><img class="card-photo" src="woman-before-after.webp"
+            alt="Real Better Body Academy client — 15kg lost, 11cm off the waist" loading="lazy"></div>
+          <div class="card-foot">
+            <span class="card-label">Woman</span>
+            <span class="card-arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="proof">
+        <div class="proof-item">
+          <div class="proof-num">4,000+</div>
+          <div class="proof-label">Transformations</div>
+        </div>
+        <span class="proof-div"></span>
+        <div class="proof-item">
+          <div class="proof-num">20+</div>
+          <div class="proof-label">Countries</div>
+        </div>
+        <span class="proof-div"></span>
+        <div class="proof-item">
+          <div class="proof-num">12+</div>
+          <div class="proof-label">Years Coaching</div>
+        </div>
+        <span class="proof-div"></span>
+        <div class="proof-item">
+          <div class="proof-num">98%</div>
+          <div class="proof-label">Finish Rate</div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="mission">
+      <span class="m1">Impacting one million lives.</span>
+      <span class="m2">One transformation at a time.</span>
+      <span class="copy copy--desk">Copyright © Better Body Academy. All rights reserved.</span>
+    </footer>
+
+  </div>
+
+  <div class="copybar">
+    <span class="copy">Copyright © Better Body Academy. All rights reserved.</span>
+  </div>
+
+  <script>
+    /* Count up the proof stats from 0 to their values when they scroll into view */
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var nums = document.querySelectorAll('.proof-num');
+      if (!nums.length) return;
+
+      function parse(el) {
+        var raw = el.textContent.trim();
+        var m = raw.match(/^([\d.,]+)(.*)$/);
+        if (!m) return null;
+        return {
+          target: parseFloat(m[1].replace(/,/g, '')),
+          suffix: m[2] || '',
+          comma: m[1].indexOf(',') !== -1
+        };
+      }
+      function fmt(n, comma) {
+        n = Math.round(n);
+        return comma ? n.toLocaleString('en-US') : String(n);
+      }
+
+      // capture targets, then reset to 0 so they animate in
+      nums.forEach(function (el) {
+        var info = parse(el);
+        if (!info) return;
+        el._proof = info;
+        if (!reduce) el.textContent = fmt(0, info.comma) + info.suffix;
+      });
+
+      function run(el) {
+        var info = el._proof;
+        if (!info) return;
+        if (reduce) { el.textContent = fmt(info.target, info.comma) + info.suffix; return; }
+        var dur = 1700, start = null;
+        function step(t) {
+          if (start === null) start = t;
+          var p = Math.min((t - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+          el.textContent = fmt(info.target * eased, info.comma) + info.suffix;
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = fmt(info.target, info.comma) + info.suffix;
+        }
+        requestAnimationFrame(step);
+      }
+
+      if (!('IntersectionObserver' in window)) { nums.forEach(run); return; }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var el = e.target, info = el._proof;
+          if (!info) return;
+          if (e.isIntersecting) {
+            run(el);                       // animate up whenever it scrolls into view
+          } else if (!reduce) {
+            el.textContent = fmt(0, info.comma) + info.suffix; // reset so it replays on return
+          }
+        });
+      }, { threshold: 0.25 });
+      nums.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+</body>
+</html>

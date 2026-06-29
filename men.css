@@ -736,9 +736,9 @@ button { font-family: inherit; cursor: pointer; }
 .footer-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
-  text-align: center;
+  text-align: left;
 }
 .footer-logo { height: 40px; opacity: 0.85; }
 .copyright {
@@ -1120,3 +1120,15 @@ button { font-family: inherit; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   .rm-track { animation: none; }
 }
+
+/* ============ FOOTER brand + socials ============ */
+.footer-badge { height: 72px; width: auto; filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.35)); }
+.footer-socials { display: flex; gap: 14px; }
+.footer-socials a {
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+  border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(59, 130, 246, 0.14);
+  color: #ffffff; transition: background .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
+}
+.footer-socials a svg { width: 22px; height: 22px; display: block; }
+.footer-socials a:hover { background: #38B6FF; border-color: #38B6FF; color: #ffffff; transform: translateY(-2px); }
+@media (max-width: 880px) { .footer-inner { align-items: center; text-align: center; } }

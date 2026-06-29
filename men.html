@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="men.css?v=10" />
+  <link rel="stylesheet" href="men.css?v=11" />
   <style>
     @keyframes orb-float {
 
@@ -388,82 +388,76 @@
     </div>
   </section>
 
-  <!-- 7. CLIENT REVIEWS (auto carousel under the transformations) -->
-  <section class="reviews-carousel">
-    <div class="container">
-      <div class="rc-viewport" id="rcViewport">
-        <div class="rc-track" id="rcTrack">
-        <article class="rc-card">
-          <div class="rc-mark">“</div>
-          <p class="rc-quote">Down 18kg in 6 months. I finally have the energy to keep up with my kids — and my wife noticed before I did.</p>
-          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client A</div><div class="rc-role">BBA Member</div></div></div>
-        </article>
-        <article class="rc-card">
-          <div class="rc-mark">“</div>
-          <p class="rc-quote">I tried every diet you can name. This was the first program that didn't ask me to quit my life to follow it.</p>
-          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client B</div><div class="rc-role">BBA Member</div></div></div>
-        </article>
-        <article class="rc-card">
-          <div class="rc-mark">“</div>
-          <p class="rc-quote">Lost the belly, kept the strength. At 42 I'm in the best shape since my twenties.</p>
-          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client C</div><div class="rc-role">BBA Member</div></div></div>
-        </article>
-        <article class="rc-card">
-          <div class="rc-mark">“</div>
-          <p class="rc-quote">The accountability is what makes it work. Knowing someone is checking in flips a switch.</p>
-          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client D</div><div class="rc-role">BBA Member</div></div></div>
-        </article>
-        <article class="rc-card">
-          <div class="rc-mark">“</div>
-          <p class="rc-quote">Three sessions a week. That's it. And I'm leaner now than when I was doing two-a-days.</p>
-          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client E</div><div class="rc-role">BBA Member</div></div></div>
-        </article>
-        <article class="rc-card">
-          <div class="rc-mark">“</div>
-          <p class="rc-quote">Sleep, food, training — they sorted all of it. My energy is unrecognisable.</p>
-          <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client F</div><div class="rc-role">BBA Member</div></div></div>
-        </article>
+  <!-- 7. CLIENT REVIEWS (infinite marquee under the transformations) -->
+  <section class="reviews-marquee">
+    <div class="rm-viewport">
+      <div class="rm-track">
+        <div class="rm-group">
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Down 18kg in 6 months. I finally have the energy to keep up with my kids — and my wife noticed before I did.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client A</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">I tried every diet you can name. This was the first program that didn't ask me to quit my life to follow it.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client B</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Lost the belly, kept the strength. At 42 I'm in the best shape since my twenties.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client C</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">The accountability is what makes it work. Knowing someone is checking in flips a switch.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client D</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Three sessions a week. That's it. And I'm leaner now than when I was doing two-a-days.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client E</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Sleep, food, training — they sorted all of it. My energy is unrecognisable.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client F</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+        </div>
+        <div class="rm-group" aria-hidden="true">
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Down 18kg in 6 months. I finally have the energy to keep up with my kids — and my wife noticed before I did.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client A</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">I tried every diet you can name. This was the first program that didn't ask me to quit my life to follow it.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client B</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Lost the belly, kept the strength. At 42 I'm in the best shape since my twenties.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client C</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">The accountability is what makes it work. Knowing someone is checking in flips a switch.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client D</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Three sessions a week. That's it. And I'm leaner now than when I was doing two-a-days.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client E</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
+          <article class="rm-card">
+            <div class="rc-mark">“</div>
+            <p class="rc-quote">Sleep, food, training — they sorted all of it. My energy is unrecognisable.</p>
+            <div class="rc-author"><span class="rc-avatar"></span><div><div class="rc-name">Client F</div><div class="rc-role">BBA Member</div></div></div>
+          </article>
         </div>
       </div>
-      <div class="rc-dots" id="rcDots"></div>
     </div>
-    <script>
-      (function () {
-        var track = document.getElementById("rcTrack");
-        var vp = document.getElementById("rcViewport");
-        var dotsWrap = document.getElementById("rcDots");
-        if (!track || !vp) return;
-        var cards = [].slice.call(track.children);
-        var i = 0, timer = null;
-        var DELAY = 3500;
-        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        cards.forEach(function (c, idx) {
-          var d = document.createElement("button");
-          d.type = "button"; d.className = "rc-dot"; d.setAttribute("aria-label", "Review " + (idx + 1));
-          d.addEventListener("click", function () { go(idx); restart(); });
-          dotsWrap.appendChild(d);
-        });
-        var dots = [].slice.call(dotsWrap.children);
-        function center() {
-          var c = cards[i];
-          var x = vp.clientWidth / 2 - (c.offsetLeft + c.offsetWidth / 2);
-          track.style.transform = "translateX(" + x + "px)";
-          cards.forEach(function (card, idx) { card.classList.toggle("is-active", idx === i); });
-          dots.forEach(function (d, idx) { d.classList.toggle("is-active", idx === i); });
-        }
-        function go(n) { i = (n + cards.length) % cards.length; center(); }
-        function next() { go(i + 1); }
-        function start() { if (reduce) return; stop(); timer = setInterval(next, DELAY); }
-        function stop() { if (timer) { clearInterval(timer); timer = null; } }
-        function restart() { stop(); start(); }
-        vp.addEventListener("mouseenter", stop);
-        vp.addEventListener("mouseleave", start);
-        window.addEventListener("resize", center);
-        center(); start();
-        setTimeout(center, 300);
-        window.addEventListener("load", center);
-      })();
-    </script>
   </section>
 
   <!-- 6. APPLICATION -->

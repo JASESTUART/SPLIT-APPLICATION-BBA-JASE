@@ -1071,47 +1071,50 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 44px;
 }
 
-/* ============ CLIENT REVIEWS — auto carousel ============ */
-.reviews-carousel {
+/* ============ CLIENT REVIEWS — infinite marquee ============ */
+.reviews-marquee {
   padding: 56px 0;
   border-top: 1px solid rgba(59, 130, 246, 0.1);
   border-bottom: 1px solid rgba(59, 130, 246, 0.1);
   background: rgba(3, 6, 12, 0.45);
   overflow: hidden;
 }
-.rc-viewport { overflow: hidden; padding: 28px 0; }
-.rc-track {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-  will-change: transform;
+.rm-viewport {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-.rc-card {
+.rm-track {
+  display: flex;
+  width: max-content;
+  animation: rm-scroll 45s linear infinite;
+}
+.reviews-marquee:hover .rm-track { animation-play-state: paused; }
+.rm-group {
+  display: flex;
+  gap: 24px;
+  padding-right: 24px;
+}
+@keyframes rm-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.rm-card {
   flex: 0 0 auto;
-  width: min(420px, 82vw);
+  width: min(380px, 82vw);
   box-sizing: border-box;
   background: linear-gradient(180deg, #0c1220 0%, #131b2e 100%);
-  border: 1px solid rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(59, 130, 246, 0.18);
   border-radius: 18px;
-  padding: 28px 26px;
+  padding: 26px 24px;
   text-align: left;
-  opacity: 0.4;
-  transform: scale(0.9);
-  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
 }
-.rc-card.is-active {
-  opacity: 1;
-  transform: scale(1);
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(59, 130, 246, 0.18);
-}
-.rc-mark { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 38px; line-height: 1; color: #38B6FF; margin-bottom: 8px; }
-.rc-quote { font-size: 17px; line-height: 1.6; color: #e2e8f0; margin-bottom: 22px; }
+.rc-mark { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 36px; line-height: 1; color: #38B6FF; margin-bottom: 8px; }
+.rc-quote { font-size: 16px; line-height: 1.6; color: #e2e8f0; margin-bottom: 20px; }
 .rc-author { display: flex; align-items: center; gap: 12px; }
 .rc-avatar { width: 38px; height: 38px; border-radius: 50%; background: #1e293b; flex-shrink: 0; }
 .rc-name { font-size: 14px; font-weight: 600; color: #ffffff; }
 .rc-role { font-size: 12px; color: #64748b; }
-.rc-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
-.rc-dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: rgba(255, 255, 255, 0.2); transition: all 0.3s ease; }
-.rc-dot.is-active { background: #38B6FF; width: 22px; border-radius: 5px; }
+@media (prefers-reduced-motion: reduce) {
+  .rm-track { animation: none; }
+}

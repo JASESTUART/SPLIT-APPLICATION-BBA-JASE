@@ -57,7 +57,7 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 18px;
   letter-spacing: 0.3em;
   color: #cbd5e1;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 .section-headline {
   font-family: 'Poppins', sans-serif;
@@ -385,7 +385,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============ AS SEEN IN ============ */
 .as-seen-in {
-  padding: 40px 0;
+  padding: 24px 0;
   border-top: 1px solid rgba(59, 130, 246, 0.1);
   border-bottom: 1px solid rgba(59, 130, 246, 0.1);
 }
@@ -683,9 +683,9 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============ FOOTER ============ */
 .page-footer {
-  padding: 60px 0 40px;
+  padding: 28px 0;
   border-top: 1px solid rgba(59, 130, 246, 0.12);
-  margin-top: 40px;
+  margin-top: 24px;
 }
 .footer-inner {
   display: flex;

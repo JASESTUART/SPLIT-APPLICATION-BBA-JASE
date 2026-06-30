@@ -1111,6 +1111,60 @@ button { font-family: inherit; cursor: pointer; }
   .rm-track { animation: none; }
 }
 
+/* ============ HERO before/after marquee (2 rows) ============ */
+.hero-marquee-section {
+  padding: 8px 0 48px;
+  overflow: hidden;
+}
+.hero-marquee {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.hm-viewport {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.hm-track {
+  display: flex;
+  width: max-content;
+  filter: blur(0.5px);
+  will-change: transform;
+}
+.hm-row-a { animation: hm-scroll 60s linear infinite; }
+.hm-row-b { animation: hm-scroll 75s linear infinite; }
+.hero-marquee:hover .hm-track { animation-play-state: paused; filter: none; }
+.hm-group {
+  display: flex;
+  gap: 18px;
+  padding-right: 18px;
+}
+@keyframes hm-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.hm-card {
+  flex: 0 0 auto;
+  width: clamp(190px, 22vw, 250px);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #05070d;
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  box-shadow: 0 14px 36px -16px rgba(0, 0, 0, 0.8);
+}
+.hm-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  background: #05070d;
+  display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-track { animation: none; }
+}
+
 /* ============ FOOTER brand + socials ============ */
 .footer-badge { height: 72px; width: auto; filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.35)); }
 

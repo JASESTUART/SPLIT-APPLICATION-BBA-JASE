@@ -1148,7 +1148,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 @keyframes hm-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-33.3333%); }
 }
 .hm-card {
   flex: 0 0 auto;

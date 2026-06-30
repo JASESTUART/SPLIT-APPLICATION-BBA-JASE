@@ -1072,7 +1072,7 @@ button { font-family: inherit; cursor: pointer; }
 .rvc-head { text-align: center; margin: 0 auto 44px; padding: 0 24px; }
 .rvc-eyebrow {
   font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: #64748b; font-weight: 600; margin: 0 0 14px;
+  color: #38B6FF; font-weight: 600; margin: 0 0 14px;
 }
 .rvc-title {
   font-family: 'Inter', sans-serif; font-weight: 800;

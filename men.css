@@ -1100,9 +1100,10 @@ button { font-family: inherit; cursor: pointer; }
 }
 .shot {
   flex: 0 0 auto;
-  height: clamp(360px, 52vh, 470px);
-  width: auto;
-  max-width: 88vw;
+  width: clamp(340px, 30vw, 400px);
+  height: clamp(620px, 76vh, 760px);
+  object-fit: contain;
+  object-position: center;
   border-radius: 16px;
   border: 1px solid rgba(59, 130, 246, 0.18);
   background: #05070d;
@@ -1119,7 +1120,7 @@ button { font-family: inherit; cursor: pointer; }
   .rvc-track { animation: none; }
 }
 @media (max-width: 720px) {
-  .shot { height: 60vh; }
+  .shot { width: 82vw; height: 78vh; }
 }
 
 /* ============ VIDEO TESTIMONIALS ============ */

@@ -1116,6 +1116,11 @@ button { font-family: inherit; cursor: pointer; }
   padding: 40px 0 56px;
   overflow: hidden;
 }
+.post-carousel-cta {
+  display: flex;
+  justify-content: center;
+  padding: 8px 24px 48px;
+}
 .hero-marquee {
   width: 100%;
   margin-top: 36px;

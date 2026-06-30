@@ -755,7 +755,7 @@ button { font-family: inherit; cursor: pointer; }
 .application-cta {
   display: flex;
   justify-content: center;
-  margin: 48px auto 0;
+  margin: 0 auto;
 }
 .application-cta > a { width: auto; }
 .application-footnote {

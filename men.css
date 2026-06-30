@@ -1139,7 +1139,7 @@ button { font-family: inherit; cursor: pointer; }
   will-change: transform;
 }
 .hm-row-a { animation: hm-scroll 60s linear infinite; }
-.hm-row-b { animation: hm-scroll 75s linear infinite; }
+.hm-row-b { animation: hm-scroll-rev 75s linear infinite; }
 .hero-marquee:hover .hm-track { animation-play-state: paused; }
 .hm-group {
   display: flex;
@@ -1149,6 +1149,10 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes hm-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-33.3333%); }
+}
+@keyframes hm-scroll-rev {
+  from { transform: translateX(-33.3333%); }
+  to { transform: translateX(0); }
 }
 .hm-card {
   flex: 0 0 auto;

@@ -1101,6 +1101,7 @@ button { font-family: inherit; cursor: pointer; }
 .chat-card {
   flex: 0 0 auto;
   width: min(360px, 84vw);
+  height: clamp(560px, 64vh, 620px);
   box-sizing: border-box;
   background: #0e1422;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -1108,6 +1109,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 16px 18px;
   text-align: left;
   display: flex; flex-direction: column; gap: 12px;
+  overflow: hidden;
   box-shadow: 0 16px 40px -24px rgba(0, 0, 0, 0.85);
   transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
@@ -1116,7 +1118,7 @@ button { font-family: inherit; cursor: pointer; }
   border-color: rgba(56, 182, 255, 0.4);
   box-shadow: 0 22px 50px -24px rgba(0, 0, 0, 0.9);
 }
-.cc-head { display: flex; align-items: center; gap: 12px; }
+.cc-head { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
 .cc-avatar {
   width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
@@ -1126,13 +1128,19 @@ button { font-family: inherit; cursor: pointer; }
 .cc-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .cc-name { font-size: 14.5px; font-weight: 700; color: #ffffff; line-height: 1.2; }
 .cc-date { font-size: 12px; color: #8a93a3; }
-.cc-text { font-size: 14.5px; line-height: 1.6; color: #f3f5f8; margin: 0; }
+.cc-text {
+  font-size: 14px; line-height: 1.55; color: #f3f5f8; margin: 0;
+  flex: 0 0 auto;
+  display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: calc(1.55em * 6);
+}
 .cc-media {
-  display: block; width: 100%; height: auto;
+  display: block; flex: 1 1 auto; min-height: 0; width: 100%;
+  object-fit: contain; object-position: center;
   border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12);
   background: #0e1422;
 }
-.cc-reactions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+.cc-reactions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2px; flex: 0 0 auto; }
 .cc-react {
   display: inline-flex; align-items: center; gap: 5px;
   background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.09);

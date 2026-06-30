@@ -1113,11 +1113,12 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ============ HERO before/after marquee (2 rows) ============ */
 .hero-marquee-section {
-  padding: 8px 0 48px;
+  padding: 40px 0 56px;
   overflow: hidden;
 }
 .hero-marquee {
   width: 100%;
+  margin-top: 36px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -1130,12 +1131,11 @@ button { font-family: inherit; cursor: pointer; }
 .hm-track {
   display: flex;
   width: max-content;
-  filter: blur(0.5px);
   will-change: transform;
 }
 .hm-row-a { animation: hm-scroll 60s linear infinite; }
 .hm-row-b { animation: hm-scroll 75s linear infinite; }
-.hero-marquee:hover .hm-track { animation-play-state: paused; filter: none; }
+.hero-marquee:hover .hm-track { animation-play-state: paused; }
 .hm-group {
   display: flex;
   gap: 18px;

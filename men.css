@@ -1243,8 +1243,8 @@ button { font-family: inherit; cursor: pointer; }
   width: max-content;
   will-change: transform;
 }
-.hm-row-a { animation: hm-scroll 60s linear infinite; }
-.hm-row-b { animation: hm-scroll-rev 75s linear infinite; }
+.hm-row-a { animation: hm-scroll 35s linear infinite; }
+.hm-row-b { animation: hm-scroll-rev 35s linear infinite; }
 .hero-marquee:hover .hm-track { animation-play-state: paused; }
 .hm-group {
   display: flex;

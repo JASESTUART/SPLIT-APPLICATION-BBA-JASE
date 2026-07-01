@@ -1086,8 +1086,8 @@ button { font-family: inherit; cursor: pointer; }
   mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 .rvc-track { display: flex; width: max-content; will-change: transform; }
-.rvc-row-a { animation: rvc-scroll 40s linear infinite; }
-.rvc-row-b { animation: rvc-scroll-rev 40s linear infinite; }
+.rvc-row-a { animation: rvc-scroll 35s linear infinite; }
+.rvc-row-b { animation: rvc-scroll-rev 35s linear infinite; }
 .reviews-chat:hover .rvc-track { animation-play-state: paused; }
 .rvc-group { display: flex; gap: 18px; padding-right: 18px; align-items: flex-start; }
 @keyframes rvc-scroll {

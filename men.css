@@ -1620,3 +1620,8 @@ button { font-family: inherit; cursor: pointer; }
   max-width: 24ch;
   margin: 44px auto 0;
 }
+
+/* ============ Anchor scroll offset (clear the fixed navbar) ============ */
+#why, #fix, #proof, #member-reviews, #reviews, #cta, #faq {
+  scroll-margin-top: 108px;
+}

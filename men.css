@@ -1224,7 +1224,7 @@ button { font-family: inherit; cursor: pointer; }
 .post-carousel-cta {
   display: flex;
   justify-content: center;
-  padding: 88px 24px 80px;
+  padding: 160px 24px 60px;
 }
 .hero-marquee {
   width: 100%;

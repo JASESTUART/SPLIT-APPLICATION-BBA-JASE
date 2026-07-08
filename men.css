@@ -269,7 +269,7 @@ button { font-family: inherit; cursor: pointer; }
   left: 2px;
   z-index: -1;
   border-radius: 9999px;
-  background: #0A0A0A;
+  background: #00AEEF;
   overflow: hidden;
 }
 .nav-cta .cta-grad {

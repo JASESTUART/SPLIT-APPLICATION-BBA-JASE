@@ -13,7 +13,7 @@
 
 <style>
   :root{
-    --black:#0a0a0a;
+    --black:#05070d;
     --coral:#00AEEF;
     --white:#ffffff;
 
@@ -41,14 +41,16 @@
     overflow-x:hidden;
   }
 
-  /* ambient coral halo — kept faint to respect the 80/15/5 ratio */
+  /* background glow — matched to men.html's .bg-glow */
   body::before{
     content:"";
     position:fixed;
     inset:0;
     background:
-      radial-gradient(80% 55% at 50% 78%, rgba(0,174,239,.14), transparent 60%),
-      radial-gradient(60% 40% at 50% 0%, rgba(0,174,239,.05), transparent 55%);
+      radial-gradient(circle at 15% 10%, rgba(59,130,246,0.20), transparent 55%),
+      radial-gradient(circle at 85% 90%, rgba(30,58,138,0.25), transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(96,165,250,0.05), transparent 70%),
+      linear-gradient(180deg, #05070d 0%, #0a1020 100%);
     pointer-events:none;
     z-index:0;
   }

@@ -1637,12 +1637,12 @@ button { font-family: inherit; cursor: pointer; }
 .infinity-section .armR { animation: inf-inR 1s cubic-bezier(.22,1,.36,1) forwards; opacity: 0; }
 .infinity-section .link { animation: inf-inC .7s ease forwards 1s; opacity: 0; transform-origin: 297px 462px; }
 .infinity-section .labels {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  column-gap: clamp(8px, 1.4vw, 14px);
-  width: min(940px, 100%);
-  margin: 22px auto 0;
+  gap: clamp(16px, 3vw, 28px);
+  width: auto;
+  margin: 26px auto 0;
 }
 .infinity-section .op {
   font-family: 'Inter', sans-serif;
@@ -1665,7 +1665,14 @@ button { font-family: inherit; cursor: pointer; }
 .infinity-section .lbl.plan { color: #ffffff; text-align: right; animation-delay: 1.4s; }
 .infinity-section .lbl.acc  { color: #ffffff; text-align: left;  animation-delay: 1.7s; }
 
-.infinity-result { margin: 10px auto 0; text-align: center; }
+.infinity-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 3vw, 28px);
+  margin: clamp(16px, 3vw, 28px) auto 0;
+  text-align: center;
+}
 .infinity-result .eq {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
@@ -1683,7 +1690,6 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.03em;
   color: #38B6FF;
   text-shadow: 0 0 28px rgba(56, 182, 255, 0.55);
-  margin-top: 8px;
   opacity: 0;
   animation: inf-fadeUp .8s ease forwards;
   animation-delay: 2.3s;

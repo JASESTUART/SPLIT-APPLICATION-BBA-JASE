@@ -640,7 +640,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .founder-copy .section-headline { margin-bottom: 24px; }
 .founder-text {
-  font-size: 17px;
+  font-size: clamp(15px, 1.6vw, 18px);
   color: #cbd5e1;
   margin-bottom: 20px;
   line-height: 1.7;

@@ -1699,6 +1699,29 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes inf-inC { 0% { opacity: 0; transform: scale(.5); }          100% { opacity: 1; transform: scale(1); } }
 @keyframes inf-fadeUp { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
 
+/* ============ COACHING PHILOSOPHY — trifecta graphic (scoped) ============ */
+.trifecta-section { text-align: center; margin-top: 10px; }
+.trifecta-section svg {
+  width: min(520px, 88vw);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.trifecta-section .tri {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: tri-draw 1.8s cubic-bezier(.45, 0, .25, 1) forwards;
+}
+@keyframes tri-draw { to { stroke-dashoffset: 0; } }
+.trifecta-section .lb {
+  opacity: 0;
+  animation: tri-fadeUp .8s ease forwards 1.6s;
+}
+@keyframes tri-fadeUp {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 /* ============ Anchor scroll offset (clear the fixed navbar) ============ */
 #why, #fix, #proof, #member-reviews, #reviews, #cta, #faq {
   scroll-margin-top: 108px;

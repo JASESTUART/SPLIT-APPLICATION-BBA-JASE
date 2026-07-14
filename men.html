@@ -479,6 +479,72 @@
   <section class="section section-system" id="philosophy">
     <div class="container">
       <h2 class="fix-headline">Our coaching philosophy.</h2>
+      <div class="trifecta-section">
+        <svg viewBox="0 0 680 470" role="img" aria-label="Trifecta triangle with steps, nutrition and exercise at the corners, a glowing ball travels the edges lighting each corner">
+        <defs>
+        <linearGradient id="tgrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#38B6FF"/>
+        <stop offset="100%" stop-color="#2563EB"/>
+        </linearGradient>
+        <filter id="tglow" x="-80%" y="-80%" width="260%" height="260%">
+        <feGaussianBlur stdDeviation="10"/>
+        </filter>
+        </defs>
+
+        <path class="tri" d="M340 96 L494 356 L186 356 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" pathLength="998"/>
+
+        <!-- corner nodes: white, flash bright blue when the ball arrives -->
+        <circle cx="340" cy="96" r="22" fill="#00AEEF" filter="url(#tglow)" opacity="0">
+          <animate attributeName="opacity" values="0.9;0;0;0.9" keyTimes="0;0.12;0.90;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="340" cy="96" r="11" fill="#ffffff">
+          <animate attributeName="fill" values="#38B6FF;#ffffff;#ffffff;#38B6FF" keyTimes="0;0.10;0.92;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="15;11;11;15" keyTimes="0;0.10;0.92;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="494" cy="356" r="22" fill="#00AEEF" filter="url(#tglow)" opacity="0">
+          <animate attributeName="opacity" values="0;0;0.9;0;0" keyTimes="0;0.28;0.333;0.44;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="494" cy="356" r="11" fill="#ffffff">
+          <animate attributeName="fill" values="#ffffff;#ffffff;#38B6FF;#ffffff;#ffffff" keyTimes="0;0.28;0.333;0.42;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="11;11;15;11;11" keyTimes="0;0.28;0.333;0.42;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="186" cy="356" r="22" fill="#00AEEF" filter="url(#tglow)" opacity="0">
+          <animate attributeName="opacity" values="0;0;0.9;0;0" keyTimes="0;0.61;0.667;0.78;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="186" cy="356" r="11" fill="#ffffff">
+          <animate attributeName="fill" values="#ffffff;#ffffff;#38B6FF;#ffffff;#ffffff" keyTimes="0;0.61;0.667;0.76;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="11;11;15;11;11" keyTimes="0;0.61;0.667;0.76;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- labels -->
+        <g class="lb" font-family="Inter,sans-serif" font-weight="800" font-size="24">
+        <text x="340" y="62" text-anchor="middle" fill="#ffffff">STEPS
+          <animate attributeName="fill" values="#38B6FF;#ffffff;#ffffff;#38B6FF" keyTimes="0;0.12;0.90;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </text>
+        <text x="510" y="404" text-anchor="middle" fill="#ffffff">EXERCISE
+          <animate attributeName="fill" values="#ffffff;#ffffff;#38B6FF;#ffffff;#ffffff" keyTimes="0;0.27;0.333;0.45;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </text>
+        <text x="172" y="404" text-anchor="middle" fill="#ffffff">NUTRITION
+          <animate attributeName="fill" values="#ffffff;#ffffff;#38B6FF;#ffffff;#ffffff" keyTimes="0;0.60;0.667;0.78;1" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+        </text>
+        </g>
+
+        <!-- travelling ball, clockwise: top -> exercise -> nutrition -> top -->
+        <g opacity="0">
+          <animate attributeName="opacity" values="0;1" dur="0.3s" begin="2s" fill="freeze"/>
+          <circle r="15" fill="#00AEEF" opacity="0.4" filter="url(#tglow)">
+            <animateMotion path="M340 96 L494 356 L186 356 Z" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="8" fill="#00AEEF">
+            <animateMotion path="M340 96 L494 356 L186 356 Z" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <g class="lb">
+        <text x="340" y="272" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="4" fill="#00AEEF">THE</text>
+        <text x="340" y="304" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="27" fill="#ffffff">TRIFECTA</text>
+        </g>
+        </svg>
+      </div>
     </div>
   </section>
 

@@ -1637,11 +1637,26 @@ button { font-family: inherit; cursor: pointer; }
 .infinity-section .armR { animation: inf-inR 1s cubic-bezier(.22,1,.36,1) forwards; opacity: 0; }
 .infinity-section .link { animation: inf-inC .7s ease forwards 1s; opacity: 0; transform-origin: 297px 462px; }
 .infinity-section .labels {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: min(560px, 88vw);
   margin: 20px auto 0;
 }
+.infinity-section .op {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(15px, 2.6vw, 21px);
+  color: rgba(255, 255, 255, 0.55);
+  opacity: 0;
+  animation: inf-fade .8s ease forwards;
+  animation-delay: 1.55s;
+}
+@keyframes inf-fade { from { opacity: 0; } to { opacity: 1; } }
 .infinity-section .lbl {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
@@ -1650,27 +1665,26 @@ button { font-family: inherit; cursor: pointer; }
   animation: inf-fadeUp .8s ease forwards;
 }
 .infinity-section .lbl.plan { color: #ffffff; animation-delay: 1.4s; }
-.infinity-section .lbl.op   { color: rgba(255, 255, 255, 0.55); align-self: center; animation-delay: 1.55s; }
 .infinity-section .lbl.acc  { color: #ffffff; animation-delay: 1.7s; }
 
-.infinity-result { margin: 16px auto 0; text-align: center; }
+.infinity-result { margin: 14px auto 0; text-align: center; }
 .infinity-result .eq {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
-  font-size: clamp(22px, 3.6vw, 32px);
+  font-size: clamp(15px, 2.6vw, 21px);
   line-height: 1;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.55);
   opacity: 0;
-  animation: inf-fadeUp .8s ease forwards;
+  animation: inf-fade .8s ease forwards;
   animation-delay: 2s;
 }
 .infinity-result .res {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
-  font-size: clamp(28px, 5vw, 44px);
+  font-size: clamp(15px, 2.6vw, 21px);
   letter-spacing: 0.02em;
   color: #38B6FF;
-  margin-top: 6px;
+  margin-top: 8px;
   opacity: 0;
   animation: inf-fadeUp .8s ease forwards;
   animation-delay: 2.3s;

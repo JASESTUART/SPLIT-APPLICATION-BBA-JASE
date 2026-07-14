@@ -394,6 +394,24 @@
   </section>
 
 
+  <!-- SECTION DIVIDER — animated wave band -->
+  <div class="section-wave" aria-hidden="true">
+    <svg class="section-wave__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="section-wave-stroke" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#38B6FF" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#60a5fa" stop-opacity="1"/>
+          <stop offset="1" stop-color="#38B6FF" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="section-wave__line section-wave__line--back" fill="none" stroke="url(#section-wave-stroke)" stroke-width="2" stroke-linecap="round"
+        d="M0,70 C120,45 240,45 360,70 C480,95 600,95 720,70 C840,45 960,45 1080,70 C1200,95 1320,95 1440,70 C1560,45 1680,45 1800,70 C1920,95 2040,95 2160,70 C2280,45 2400,45 2520,70 C2640,95 2760,95 2880,70"/>
+      <path class="section-wave__line section-wave__line--front" fill="none" stroke="url(#section-wave-stroke)" stroke-width="2.5" stroke-linecap="round"
+        d="M0,60 C120,20 240,20 360,60 C480,100 600,100 720,60 C840,20 960,20 1080,60 C1200,100 1320,100 1440,60 C1560,20 1680,20 1800,60 C1920,100 2040,100 2160,60 C2280,20 2400,20 2520,60 C2640,100 2760,100 2880,60"/>
+    </svg>
+  </div>
+
+
   <!-- 4. THE 4 PILLARS -->
   <section class="pillars section" id="fix">
     <div class="container">

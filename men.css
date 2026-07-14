@@ -1703,19 +1703,19 @@ button { font-family: inherit; cursor: pointer; }
 .pm-tab {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 18px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.07);
   background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
-  transition: border-color 0.35s ease, background 0.35s ease;
+  transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }
 .pm-tab .pm-ic {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.35);
   display: flex;
@@ -1723,24 +1723,29 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: center;
   transition: background 0.35s ease, color 0.35s ease;
 }
-.pm-tab .pm-ic svg { stroke: currentColor; }
+.pm-tab .pm-ic svg { stroke: currentColor; width: 22px; height: 22px; }
 .pm-tab .pm-title {
-  font-size: 16px;
+  font-size: 17.5px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.42);
   margin: 0 0 3px;
   transition: color 0.35s ease;
 }
 .pm-tab .pm-sub {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.22);
   margin: 0;
   transition: color 0.35s ease;
 }
-.pm-tab.pm-active { border-color: rgba(0, 174, 239, 0.35); background: rgba(0, 174, 239, 0.08); }
-.pm-tab.pm-active .pm-ic { background: rgba(0, 174, 239, 0.15); color: #00AEEF; }
+.pm-tab.pm-active {
+  border-color: #00AEEF;
+  background: rgba(0, 174, 239, 0.16);
+  box-shadow: 0 0 30px rgba(0, 174, 239, 0.35), inset 0 0 0 1px rgba(0, 174, 239, 0.4);
+  transform: scale(1.03);
+}
+.pm-tab.pm-active .pm-ic { background: rgba(0, 174, 239, 0.28); color: #2ec6ff; }
 .pm-tab.pm-active .pm-title { color: #ffffff; }
-.pm-tab.pm-active .pm-sub { color: rgba(0, 174, 239, 0.75); }
+.pm-tab.pm-active .pm-sub { color: #4fc3f0; }
 
 /* ============ COACHING PHILOSOPHY — trifecta graphic (scoped) ============ */
 .trifecta-section { text-align: center; margin-top: 10px; }

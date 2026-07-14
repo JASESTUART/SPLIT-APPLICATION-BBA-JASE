@@ -1707,7 +1707,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 20px 22px;
   border-radius: 16px;
   border: 2px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.03);
+  background: #0d1526;
   cursor: pointer;
   transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
 }

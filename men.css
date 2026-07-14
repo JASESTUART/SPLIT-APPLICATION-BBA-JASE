@@ -1641,7 +1641,7 @@ button { font-family: inherit; cursor: pointer; }
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   column-gap: clamp(14px, 2.4vw, 26px);
-  width: min(600px, 92vw);
+  width: min(940px, 96vw);
   margin: 22px auto 0;
 }
 .infinity-section .op {
@@ -1661,8 +1661,8 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 0;
   animation: inf-fadeUp .8s ease forwards;
 }
-.infinity-section .lbl.plan { color: #ffffff; text-align: right; animation-delay: 1.4s; }
-.infinity-section .lbl.acc  { color: #ffffff; text-align: left;  animation-delay: 1.7s; }
+.infinity-section .lbl.plan { color: #ffffff; text-align: left;  animation-delay: 1.4s; }
+.infinity-section .lbl.acc  { color: #ffffff; text-align: right; animation-delay: 1.7s; }
 
 .infinity-result { margin: 10px auto 0; text-align: center; }
 .infinity-result .eq {
@@ -1677,11 +1677,12 @@ button { font-family: inherit; cursor: pointer; }
 }
 .infinity-result .res {
   font-family: 'Inter', sans-serif;
-  font-weight: 800;
-  font-size: clamp(26px, 4.6vw, 40px);
-  letter-spacing: 0.02em;
+  font-weight: 900;
+  font-size: clamp(34px, 6vw, 54px);
+  letter-spacing: 0.03em;
   color: #38B6FF;
-  margin-top: 6px;
+  text-shadow: 0 0 28px rgba(56, 182, 255, 0.55);
+  margin-top: 8px;
   opacity: 0;
   animation: inf-fadeUp .8s ease forwards;
   animation-delay: 2.3s;

@@ -1625,6 +1625,37 @@ button { font-family: inherit; cursor: pointer; }
 .section-simpler { background: #0a0a0a; }
 .section-system  { background: #0d1526; }
 
+/* ============ THE SYSTEM — infinity graphic (scoped) ============ */
+.infinity-section { text-align: center; }
+.infinity-section svg {
+  width: min(560px, 88vw);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.infinity-section .armL { animation: inf-inL 1s cubic-bezier(.22,1,.36,1) forwards; opacity: 0; }
+.infinity-section .armR { animation: inf-inR 1s cubic-bezier(.22,1,.36,1) forwards; opacity: 0; }
+.infinity-section .link { animation: inf-inC .7s ease forwards 1s; opacity: 0; transform-origin: 297px 462px; }
+.infinity-section .labels {
+  display: flex;
+  justify-content: space-between;
+  width: min(560px, 88vw);
+  margin: 20px auto 0;
+}
+.infinity-section .lbl {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(15px, 2.6vw, 21px);
+  opacity: 0;
+  animation: inf-fadeUp .8s ease forwards;
+}
+.infinity-section .lbl.plan { color: #ffffff; animation-delay: 1.4s; }
+.infinity-section .lbl.acc  { color: #00AEEF; animation-delay: 1.7s; }
+@keyframes inf-inL { 0% { opacity: 0; transform: translateX(-120px); } 100% { opacity: 1; transform: translateX(0); } }
+@keyframes inf-inR { 0% { opacity: 0; transform: translateX(120px); }  100% { opacity: 1; transform: translateX(0); } }
+@keyframes inf-inC { 0% { opacity: 0; transform: scale(.5); }          100% { opacity: 1; transform: scale(1); } }
+@keyframes inf-fadeUp { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+
 /* ============ Anchor scroll offset (clear the fixed navbar) ============ */
 #why, #fix, #proof, #member-reviews, #reviews, #cta, #faq {
   scroll-margin-top: 108px;

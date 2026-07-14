@@ -1621,17 +1621,13 @@ button { font-family: inherit; cursor: pointer; }
   margin: 44px auto 0;
 }
 
-/* ============ SECTION DIVIDER — animated wave band ============ */
+/* ============ SECTION DIVIDER — hand-drawn scribble ============ */
 .section-wave {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 170px;
   overflow: hidden;
   pointer-events: none;
-  background: linear-gradient(180deg,
-    rgba(56, 182, 255, 0) 0%,
-    rgba(56, 182, 255, 0.06) 50%,
-    rgba(56, 182, 255, 0) 100%);
 }
 .section-wave__svg {
   position: absolute;
@@ -1640,26 +1636,35 @@ button { font-family: inherit; cursor: pointer; }
   height: 100%;
   display: block;
 }
-.section-wave__line {
-  will-change: transform;
+/* faint full "ink" line — the scribble stays visible */
+.section-wave__ink {
+  fill: none;
+  stroke: url(#section-wave-stroke);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.22;
 }
-.section-wave__line--back {
-  opacity: 0.35;
-  animation: section-wave-shift 15s linear infinite;
+/* bright tracer that draws along the scribble on a loop */
+.section-wave__trace {
+  fill: none;
+  stroke: url(#section-wave-stroke);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 230 770;   /* lit segment / gap, pathLength = 1000 */
+  filter: drop-shadow(0 0 6px rgba(56, 182, 255, 0.7));
+  animation: section-wave-trace 5.5s linear infinite;
 }
-.section-wave__line--front {
-  opacity: 0.85;
-  animation: section-wave-shift 9s linear infinite;
-}
-@keyframes section-wave-shift {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-720px); }
+@keyframes section-wave-trace {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
 }
 @media (max-width: 720px) {
-  .section-wave { height: 80px; }
+  .section-wave { height: 120px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .section-wave__line { animation: none; }
+  .section-wave__trace { animation: none; opacity: 0.55; }
 }
 
 /* ============ Anchor scroll offset (clear the fixed navbar) ============ */

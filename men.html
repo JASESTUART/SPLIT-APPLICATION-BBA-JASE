@@ -394,20 +394,20 @@
   </section>
 
 
-  <!-- SECTION DIVIDER — animated wave band -->
+  <!-- SECTION DIVIDER — hand-drawn scribble with a glowing tracer -->
   <div class="section-wave" aria-hidden="true">
-    <svg class="section-wave__svg" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="section-wave__svg" viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="section-wave-stroke" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
           <stop offset="0" stop-color="#38B6FF" stop-opacity="0"/>
-          <stop offset="0.5" stop-color="#60a5fa" stop-opacity="1"/>
+          <stop offset="0.12" stop-color="#60a5fa" stop-opacity="1"/>
+          <stop offset="0.88" stop-color="#60a5fa" stop-opacity="1"/>
           <stop offset="1" stop-color="#38B6FF" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path class="section-wave__line section-wave__line--back" fill="none" stroke="url(#section-wave-stroke)" stroke-width="2" stroke-linecap="round"
-        d="M0,70 C120,45 240,45 360,70 C480,95 600,95 720,70 C840,45 960,45 1080,70 C1200,95 1320,95 1440,70 C1560,45 1680,45 1800,70 C1920,95 2040,95 2160,70 C2280,45 2400,45 2520,70 C2640,95 2760,95 2880,70"/>
-      <path class="section-wave__line section-wave__line--front" fill="none" stroke="url(#section-wave-stroke)" stroke-width="2.5" stroke-linecap="round"
-        d="M0,60 C120,20 240,20 360,60 C480,100 600,100 720,60 C840,20 960,20 1080,60 C1200,100 1320,100 1440,60 C1560,20 1680,20 1800,60 C1920,100 2040,100 2160,60 C2280,20 2400,20 2520,60 C2640,100 2760,100 2880,60"/>
+      <path id="section-wave-path" class="section-wave__ink" pathLength="1000"
+        d="M0,122 C60,100 120,150 195,126 C255,108 300,150 355,126 C405,106 470,90 452,122 C440,146 396,138 440,110 C486,80 545,108 575,138 C612,174 652,150 692,126 C742,100 822,78 802,120 C788,150 726,150 772,114 C822,76 884,104 912,142 C950,192 1012,150 1052,150 C1096,150 1116,150 1134,150 C1150,150 1150,58 1182,64 C1210,70 1200,150 1262,136 C1332,120 1382,140 1440,120"/>
+      <use href="#section-wave-path" class="section-wave__trace" pathLength="1000"/>
     </svg>
   </div>
 
